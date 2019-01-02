@@ -1,127 +1,131 @@
 /* !HTML5 elements
 ---------------------------------------------------------- */
 header, footer, nav, section, aside, article {
-    display: block;
+  display: block;
+}
+
+html {
+  font-size: 13.3333333333333vw;
 }
 
 /* !Reseting
 ---------------------------------------------------------- */
 body {
-    font-family: "Microsoft YaHei", sans-serif;
-    font-size: 12px;
-    -webkit-text-size-adjust: none;
-    line-height: 1.5;
-    color: #242424;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  -webkit-text-size-adjust: none;
+  line-height: 1.5;
+  color: #242424;
 }
 
 body, div, pre, p, blockquote, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, th, td {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 input, textarea {
-    margin: 0;
-    font-size: 100%;
+  margin: 0;
+  font-size: 100%;
 }
 
 label {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    font-size: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 100%;
 }
 
 fieldset, img {
-    border: 0;
+  border: 0;
 }
 
 img {
-    vertical-align: top;
-    max-width: 100%;
+  vertical-align: top;
+  max-width: 100%;
 }
 
 address, caption, cite, code, dfn, em, th, var {
-    font-style: normal;
-    font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
 }
 
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 
 caption, th {
-    text-align: left;
+  text-align: left;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: normal;
+  font-size: 100%;
+  font-weight: normal;
 }
 
 q:after, q:before {
-    content: '';
+  content: '';
 }
 
 a, input { /* outline: none; */
 }
 
 abbr, acronym {
-    border: 0;
+  border: 0;
 }
 
 input[type="text"],
 input[type="reset"],
 input[type="submit"],
 textarea {
-    -webkit-appearance: none;
-    outline: none;
-    border-radius: 0;
+  -webkit-appearance: none;
+  outline: none;
+  border-radius: 0;
 }
 
 button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /* !Clearfix
 ---------------------------------------------------------- */
 .clearfix {
-    display: block;
-    min-height: 1%;
+  display: block;
+  min-height: 1%;
 }
 
 .clearfix:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    visibility: hidden;
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
 }
 
 * html .clearfix {
-    height: 1%;
-    /*\*//*/
-    height: auto;
-    overflow: hidden;
-    /**/
+  height: 1%;
+  /*\*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
 }
 
 /* !Layout
 ---------------------------------------------------------- */
 html {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 body {
 }
 
 @media print {
-    html,
-    html body {
-        *zoom: 0.65;
-    }
+  html,
+  html body {
+    *zoom: 0.65;
+  }
 }
 
 
