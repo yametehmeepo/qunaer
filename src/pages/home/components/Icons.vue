@@ -110,6 +110,9 @@
     background-color: rgba(0, 175, 190, .8)
   }
 
+  .wrapper
+    background #fff
+
   .icons
     display: flex
     flex-direction: row
