@@ -38,6 +38,10 @@
     background #fff
   }
 
+  .wrapper >>> .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom 0
+  }
+
   .wrapper
     width: 100%
     height: 0
