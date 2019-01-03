@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <swiper v-if="swiperNum>1" :options="swiperOption">
-      <swiper-slide v-for="n in swiperNum" :key="n">
+    <swiper v-if="pages.length>1" :options="swiperOption">
+      <swiper-slide v-for="(page,index) in pages" :key="index">
         <div class="icons">
-          <div class="icon" v-for="item in sliceList(n)" :key="item.id">
+          <div class="icon" v-for="item in page" :key="item.id">
             <div class="img">
               <img :src="item.img" alt="">
             </div>
@@ -88,15 +88,17 @@
       }
     },
     computed: {
-      swiperNum() {
-        return Math.ceil(this.iconList.length / this.iconsPerSlide)
-      }
-    },
-    methods: {
-      sliceList(n) {
-        let iconsPerSlide = this.iconsPerSlide
-        let [...iconList] = this.iconList
-        return iconList.splice(iconsPerSlide * (n - 1), iconsPerSlide)
+      pages() {
+        const {iconList, iconsPerSlide} = this
+        let pages = []
+        iconList.map((item, index) => {
+          const page = Math.floor(index / iconsPerSlide)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(item)
+        })
+        return pages
       }
     }
   }
