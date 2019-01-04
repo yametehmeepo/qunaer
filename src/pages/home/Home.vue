@@ -4,6 +4,7 @@
     <home-swiper></home-swiper>
     <home-icons></home-icons>
     <home-recommend></home-recommend>
+    <home-likeguess></home-likeguess>
   </div>
 </template>
 
@@ -12,6 +13,7 @@
   import HomeSwiper from './components/Swiper'
   import HomeIcons from './components/Icons'
   import HomeRecommend from './components/Recommend'
+  import HomeLikeguess from './components/LikeGuess'
 
   export default {
     name: "Index",
@@ -19,7 +21,8 @@
       HomeHeader,
       HomeSwiper,
       HomeIcons,
-      HomeRecommend
+      HomeRecommend,
+      HomeLikeguess
     }
   }
 </script>
