@@ -7,10 +7,12 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="right">
-      {{city}}
-      <span class="iconfont arr-down">&#xe64a;</span>
-    </div>
+    <router-link to="/city" class="rightbtn">
+      <div class="right">
+        {{city}}
+        <span class="iconfont arr-down">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -46,11 +48,16 @@
       color: #dcdcde
       line-height: .6rem
 
+    .rightbtn
+      color: #fff
+      text-decoration none
+
     .right
       display: flex
       flex-direction: row
       align-items center
       margin-left .18rem
+
 
       .arr-down
         font-size: .2rem
