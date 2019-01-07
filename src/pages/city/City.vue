@@ -1,14 +1,19 @@
 <template>
-  <city-header></city-header>
+  <div>
+    <city-header></city-header>
+    <city-tabbar></city-tabbar>
+  </div>
 </template>
 
 <script>
   import CityHeader from './components/Header'
+  import CityTabbar from './components/Tabbar'
 
   export default {
     name: "City",
     components: {
-      CityHeader
+      CityHeader,
+      CityTabbar
     }
   }
 </script>
