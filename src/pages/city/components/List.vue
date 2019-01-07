@@ -5,8 +5,8 @@
         <div class="title">您的位置</div>
         <div class="list-wrapper">
           <ul class="list">
-            <li class="item" v-for="item in mylocation" :key="item.id">
-              <span class="button active">{{item.name}}</span>
+            <li class="item">
+              <span class="button active" @click="handleCityClick(mylocation)">{{mylocation}}</span>
             </li>
           </ul>
         </div>
@@ -16,7 +16,7 @@
         <div class="list-wrapper">
           <ul class="list">
             <li class="item" v-for="item in hotCities" :key="item.id">
-              <span class="button">{{item.name}}</span>
+              <span class="button" @click="handleCityClick(item.name)">{{item.name}}</span>
             </li>
           </ul>
         </div>
@@ -26,7 +26,7 @@
         <div class="city-list-wrapper">
           <ul class="city-list">
             <li class="city-item" v-for="item in value" :key="item.id">
-              <span class="city-button">{{item.name}}</span>
+              <span class="city-button" @click="handleCityClick(item.name)">{{item.name}}</span>
             </li>
           </ul>
         </div>
@@ -47,9 +47,16 @@
     },
     data() {
       return {
-        mylocation: [{
-          id: '0001', name: '大连'
-        }]
+        mylocation: '大连'
+      }
+    },
+    methods: {
+      handleCityClick(city) {
+        this.setCity(city)
+      },
+      setCity(city) {
+        this.$store.commit('Set_City', city)
+        this.$router.push('/')
       }
     },
     mounted() {

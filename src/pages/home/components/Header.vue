@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city" class="rightbtn">
       <div class="right">
-        {{city}}
+        {{this.$store.state.city}}
         <span class="iconfont arr-down">&#xe64a;</span>
       </div>
     </router-link>
@@ -18,8 +18,7 @@
 
 <script>
   export default {
-    name: "Header",
-    props: ['city']
+    name: "Header"
   }
 </script>
 

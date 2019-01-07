@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -48,8 +48,6 @@
       },
       setHomeInfo(data) {
         let homedata = (data.ret && data.data) ? data.data : {}
-        //console.log(homedata)
-        this.city = homedata.city
         this.iconList = homedata.iconList
         this.likeList = homedata.likeList
         this.recommendList = homedata.recommendList
