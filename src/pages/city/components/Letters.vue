@@ -24,7 +24,8 @@
     name: "Letters",
     data() {
       return {
-        letters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z']
+        letters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'],
+        timer: ''
       }
     },
     methods: {
@@ -35,20 +36,25 @@
         e.preventDefault()
       },
       handleTouchMove(e) {
-        const letterUl = this.$refs.letterUl
-        const screenw = document.documentElement.clientWidth
-        const ulw = letterUl.clientWidth
-        const ulh = letterUl.clientHeight
-        const ultop = letterUl.offsetTop
-        const headerh = 76
-        const x = e.touches[0].clientX
-        const y = e.touches[0].clientY
-        const inside = (x > screenw - ulw && x < screenw) && (y > ultop + headerh && y < ultop + headerh + ulh)
-        if (inside) {
-          const letterh = 16
-          const index = Math.floor((y - ultop - headerh) / letterh)
-          this.$emit('letterclick', this.letters[index])
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
+        this.timer = setTimeout(() => {
+          const letterUl = this.$refs.letterUl
+          const screenw = document.documentElement.clientWidth
+          const ulw = letterUl.clientWidth
+          const ulh = letterUl.clientHeight
+          const ultop = letterUl.offsetTop
+          const headerh = 76
+          const x = e.touches[0].clientX
+          const y = e.touches[0].clientY
+          const inside = (x > screenw - ulw && x < screenw) && (y > ultop + headerh && y < ultop + headerh + ulh)
+          if (inside) {
+            const letterh = 16
+            const index = Math.floor((y - ultop - headerh) / letterh)
+            this.$emit('letterclick', this.letters[index])
+          }
+        }, 16)
       }
     }
   }
