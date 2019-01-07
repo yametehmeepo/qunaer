@@ -1,16 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import state from './state'
+import mutations from './mutations'
 
 Vue.use(Vuex)
 
-const state = {
-  city: '大连'
-}
-const mutations = {
-  Set_City(state, payload) {
-    state.city = payload
-  }
-}
 
 const store = new Vuex.Store({
   state,

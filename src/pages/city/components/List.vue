@@ -36,6 +36,7 @@
 </template>
 
 <script>
+  import {mapMutations} from 'vuex'
   import BScroll from 'better-scroll'
 
   export default {
@@ -55,9 +56,11 @@
         this.setCity(city)
       },
       setCity(city) {
-        this.$store.commit('Set_City', city)
+        localStorage.setItem('city', city)
+        this.Set_City(city)
         this.$router.push('/')
-      }
+      },
+      ...mapMutations(['Set_City'])
     },
     mounted() {
       this.scroll = new BScroll(this.$refs.wrapper)

@@ -12,7 +12,7 @@
 
 <style>
   #app {
-    max-width: 750px;
+    /*max-width: 750px;*/
     margin: 0 auto;
   }
 </style>
