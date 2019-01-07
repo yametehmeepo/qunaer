@@ -3,6 +3,7 @@
     <city-header></city-header>
     <city-tabbar></city-tabbar>
     <city-list :cities="cities" :hotCities="hotCities"></city-list>
+    <city-letters></city-letters>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
   import CityHeader from './components/Header'
   import CityTabbar from './components/Tabbar'
   import CityList from './components/List'
+  import CityLetters from './components/Letters'
   import axios from 'axios'
 
   export default {
@@ -23,7 +25,8 @@
     components: {
       CityHeader,
       CityTabbar,
-      CityList
+      CityList,
+      CityLetters
     },
     methods: {
       getCityData() {
