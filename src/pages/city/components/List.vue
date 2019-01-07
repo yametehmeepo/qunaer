@@ -21,7 +21,7 @@
           </ul>
         </div>
       </div>
-      <div class="citytag" v-for="(value, key) in cities" :key="key">
+      <div class="citytag" v-for="(value, key) in cities" :key="key" :ref="key">
         <div class="title">{{key}}</div>
         <div class="city-list-wrapper">
           <ul class="city-list">
@@ -42,7 +42,8 @@
     name: "List",
     props: {
       hotCities: Array,
-      cities: Object
+      cities: Object,
+      letter: String
     },
     data() {
       return {
@@ -52,7 +53,15 @@
       }
     },
     mounted() {
-      new BScroll(this.$refs.wrapper)
+      this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    watch: {
+      letter() {
+        if (this.letter) {
+          const element = this.$refs[this.letter][0]
+          this.scroll.scrollToElement(element)
+        }
+      }
     }
   }
 </script>

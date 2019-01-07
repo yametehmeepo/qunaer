@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-tabbar></city-tabbar>
-    <city-list :cities="cities" :hotCities="hotCities"></city-list>
-    <city-letters></city-letters>
+    <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
+    <city-letters @letterclick="handleLetterClick"></city-letters>
   </div>
 </template>
 
@@ -19,7 +19,8 @@
     data() {
       return {
         cities: {},
-        hotCities: []
+        hotCities: [],
+        letter: ''
       }
     },
     components: {
@@ -31,7 +32,7 @@
     methods: {
       getCityData() {
         axios.get('/api/city.json').then(res => {
-          console.log(res)
+          //onsole.log(res)
           if (res && res.data) {
             this.setCityData(res.data)
           }
@@ -41,6 +42,9 @@
         let res = data.data
         this.cities = res.cities
         this.hotCities = res.hotCities
+      },
+      handleLetterClick(letter) {
+        this.letter = letter
       }
     },
     mounted() {
