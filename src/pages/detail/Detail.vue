@@ -1,25 +1,27 @@
 <template>
-  <div>
+  <div class="wrapper">
     <detail-banner></detail-banner>
     <detail-header></detail-header>
-    <div class="content"></div>
+    <detail-content></detail-content>
   </div>
 </template>
 
 <script>
   import DetailBanner from "./components/Banner"
   import DetailHeader from "./components/Header"
+  import DetailContent from "./components/Content"
 
   export default {
     name: "Detail",
     components: {
       DetailBanner,
-      DetailHeader
+      DetailHeader,
+      DetailContent
     }
   }
 </script>
 
 <style lang="stylus" scoped>
-  .content
-    height 50rem
+  .wrapper
+    background-color: #f5f5f5
 </style>

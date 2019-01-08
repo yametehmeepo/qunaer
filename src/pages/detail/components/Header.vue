@@ -23,7 +23,6 @@
     },
     methods: {
       handleScroll() {
-        console.log('scroll')
         const top = document.documentElement.scrollTop
         let opacity = top / 100
         opacity = opacity > 1 ? 1 : opacity
@@ -68,7 +67,7 @@
     font-size: .32rem
     line-height .88rem
     text-align center
-    z-index 100
+    z-index 98
     background-color: $bgColor
     color: #fff
 
