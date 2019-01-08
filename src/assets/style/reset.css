@@ -6,7 +6,6 @@ header, footer, nav, section, aside, article {
 
 html {
   font-size: 50px;
-  touch-action: none;
 }
 
 /* !Reseting
