@@ -2,7 +2,13 @@
   <div class="wrapper">
     <div class="title"><img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="">猜你喜欢</div>
     <ul class="list">
-      <li v-for="item in list" :key="item.id" class="item border-bottom clearfix">
+      <router-link
+        tag="li"
+        v-for="item in list"
+        :key="item.id"
+        class="item border-bottom clearfix"
+        :to="'/detail/' + item.id"
+      >
         <div class="left">
           <img :src="item.img" alt="">
           <div :class="{ 'leftcorner':true, 'buystyle01': item.buyStyle===1,'buystyle02': item.buyStyle===2}" v-if="item.buyStyle">
@@ -21,7 +27,7 @@
           </div>
           <div class="tag" v-if="item.tag"><span>{{item.tag}}</span></div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
