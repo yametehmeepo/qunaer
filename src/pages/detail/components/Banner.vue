@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <gallary @close="handleClose" v-show="showGallary"></gallary>
+    <gallary @close="handleClose" v-show="showGallary" :gallaryImgs="gallaryImgs"></gallary>
   </div>
 </template>
 
@@ -24,7 +24,11 @@
     },
     data() {
       return {
-        showGallary: true
+        showGallary: false,
+        gallaryImgs: [
+          'http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_r_800x800_56e729ef.png',
+          'http://img1.qunarzz.com/sight/p0/1709/42/426917ba25e5da3ca3.img.png_r_800x800_f7459750.png'
+        ]
       }
     },
     methods: {
