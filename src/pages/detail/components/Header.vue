@@ -5,7 +5,7 @@
     </router-link>
     <router-link tag="div" to="/" class="header-title" v-show="!showBack" :style="titleStyle">
       <div class="iconfont">&#xe624;</div>
-      大连圣亚海洋世界
+      {{sightName}}
     </router-link>
   </div>
 </template>
@@ -13,6 +13,9 @@
 <script>
   export default {
     name: "Header",
+    props: {
+      sightName: String
+    },
     data() {
       return {
         showBack: true,
@@ -31,7 +34,6 @@
       }
     },
     activated() {
-      window.scrollTo(0, 0)
       window.addEventListener('scroll', this.handleScroll)
     },
     deactivated() {

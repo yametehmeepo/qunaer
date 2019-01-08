@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg" alt="">
+      <img class="banner-img" :src="bannerImg" alt="">
       <div class="banner-info">
-        <div class="banner-title">大连圣亚海洋世界(AAAA景区)</div>
+        <div class="banner-title">{{sightName}}</div>
         <div class="banner-icon">
           <span class="iconfont">&#xe674;</span>
           36
@@ -22,13 +22,14 @@
     components: {
       Gallary
     },
+    props: {
+      bannerImg: String,
+      sightName: String,
+      gallaryImgs: Array
+    },
     data() {
       return {
-        showGallary: false,
-        gallaryImgs: [
-          'http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_r_800x800_56e729ef.png',
-          'http://img1.qunarzz.com/sight/p0/1709/42/426917ba25e5da3ca3.img.png_r_800x800_f7459750.png'
-        ]
+        showGallary: false
       }
     },
     methods: {
