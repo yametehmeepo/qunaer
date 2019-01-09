@@ -26,7 +26,7 @@
     },
     methods: {
       handleScroll() {
-        const top = document.documentElement.scrollTop
+        const top = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
         let opacity = top / 100
         opacity = opacity > 1 ? 1 : opacity
         this.titleStyle = {opacity}
@@ -34,10 +34,10 @@
       }
     },
     mounted() {
-      window.addEventListener('scroll', this.handleScroll)
+      document.addEventListener('scroll', this.handleScroll)
     },
     beforeDestroy() {
-      window.removeEventListener('scroll', this.handleScroll)
+      document.removeEventListener('scroll', this.handleScroll)
     }
   }
 </script>
